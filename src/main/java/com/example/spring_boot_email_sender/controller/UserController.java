@@ -17,8 +17,8 @@ public class UserController {
     @Autowired
     private UserRepo userRepo;
 
-    @GetMapping("/main")
-    public String getMessages(@RequestParam(required = false, defaultValue = "") String filter,
+    @GetMapping("/")
+    public String getUsers(@RequestParam(required = false, defaultValue = "") String filter,
                               Model model,
                               @PageableDefault(sort = { "id" }, direction = Sort.Direction.DESC) Pageable pageable){
 
