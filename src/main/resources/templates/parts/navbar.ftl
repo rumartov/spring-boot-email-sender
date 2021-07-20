@@ -13,7 +13,7 @@
                 <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/">Messages</a>
+                <a class="nav-link" href="/mailer">Mailer</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/profile/${name}">Profile</a>
