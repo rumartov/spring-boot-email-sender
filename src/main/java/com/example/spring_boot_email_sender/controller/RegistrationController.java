@@ -32,7 +32,7 @@ public class RegistrationController {
             return "registration";
         }
 
-        return "redirect:/";
+        return "redirect:login";
     }
 
     @GetMapping("/login")

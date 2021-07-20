@@ -6,9 +6,11 @@
     <#assign
         user = Session.SPRING_SECURITY_CONTEXT.authentication.principal
         name = user.getUsername()
+        isAdmin = user.getAuthorities()?seq_contains('ADMIN')
     >
 <#else>
     <#assign
         name = "Guest"
+        isAdmin = false
 >
 </#if>

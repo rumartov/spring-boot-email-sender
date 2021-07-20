@@ -16,11 +16,10 @@
                 <a class="nav-link" href="/">Messages</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/main/profile/${name}">Profile</a>
+                <a class="nav-link" href="/profile/${name}">Profile</a>
             </li>
         </ul>
         <div class="navbar-text mr-3">${name}</div>
         <#if known> <@l.logout /> </#if>
     </div>
-
 </nav>
