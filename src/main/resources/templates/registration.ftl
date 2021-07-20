@@ -5,5 +5,6 @@
 <div class="mb-1">
     <h5>Registration</h5>
 </div>
+${message?ifExists}
 <@l.login "/registration" true />
 </@c.page>

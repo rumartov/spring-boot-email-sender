@@ -1,5 +1,5 @@
 <#import "parts/common.ftl" as c>
 
 <@c.page>
-main
+<h1>Main</h1>
 </@c.page>

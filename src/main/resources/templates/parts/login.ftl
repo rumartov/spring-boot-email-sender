@@ -4,7 +4,14 @@
         <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Email :</label>
                 <div class="col-sm-3">
-                    <input type="text" name="email" class="form-control" placeholder="Email" />
+                    <input type="text" name="email"
+                    class="form-control ${(emailError??)?string('is-invalid', '')}"
+                    placeholder="Email" />
+                <#if emailError??>
+                    <div class="invalid-feedback">
+                        ${emailError}
+                    </div>
+                </#if>
                 </div>
         </div>
     </#if>
@@ -12,14 +19,28 @@
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">User Name :</label>
         <div class="col-sm-3">
-            <input type="text" name="username" class="form-control" placeholder="User name" />
+            <input type="text" name="username"
+            class="form-control ${(usernameError??)?string('is-invalid', '')}"
+            placeholder="User name" />
+            <#if usernameError??>
+                <div class="invalid-feedback">
+                    ${usernameError}
+                </div>
+            </#if>
         </div>
     </div>
 
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Password:</label>
         <div class="col-sm-3">
-            <input type="password" name="password" class="form-control" placeholder="Password" />
+            <input type="password" name="password"
+            class="form-control ${(usernameError??)?string('is-invalid', '')}"
+             placeholder="Password" />
+             <#if passwordError??>
+                 <div class="invalid-feedback">
+                    ${passwordError}
+                 </div>
+             </#if>
         </div>
     </div>
 
