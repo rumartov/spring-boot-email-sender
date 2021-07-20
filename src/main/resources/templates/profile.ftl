@@ -8,16 +8,29 @@
 </div>
 
 <#if isAdmin>
-    <div class="card-columns">
-        <#list users as u>
-            <div class="card my-3">
-                ${u.username}
-                ${u.email}
-            </div>
-        <#else>
-            No emails
-        </#list>
-    </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">Username</th>
+                  <th scope="col">Email</th>
+                </tr>
+            </thead>
+              <tbody>
+                   <#list users as u>
+                        <tr>
+                            <td>${u.id}</td>
+                            <td>${u.username}</td>
+                            <td>${u.email}</td>
+                        </tr>
+                        <#else>
+                            No emails
+                   </#list>
+
+               </tbody>
+        </table>
+
 <#else>
      <div>
         <h1>User things <h1>
