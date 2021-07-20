@@ -18,21 +18,7 @@ public class UserController {
     private UserRepo userRepo;
 
     @GetMapping("/")
-    public String getUsers(@RequestParam(required = false, defaultValue = "") String filter,
-                              Model model,
-                              @PageableDefault(sort = { "id" }, direction = Sort.Direction.DESC) Pageable pageable){
-
-        Page<User> page;
-
-        if (filter != null && !filter.isEmpty()) {
-            page = userRepo.findByUsername(filter, pageable);
-        } else {
-            page = userRepo.findAll(pageable);
-        }
-
-        model.addAttribute("page", page);
-        model.addAttribute("url", "/main");
-        model.addAttribute("filter", filter);
+    public String main(){
 
         return "main";
     }
