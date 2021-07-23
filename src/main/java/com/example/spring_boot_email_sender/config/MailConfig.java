@@ -28,28 +28,27 @@ public class MailConfig {
     @Value("${mail.debug}")
     private String debug;
 
-    @Value("${spring.mail.properties.mail.smtp.starttls.required}")
+    @Value("${mail.smtp.starttls.required}")
     private String tslRequired;
 
-    @Value("${spring.mail.properties.mail.smtp.starttls.enable}")
+    @Value("${mail.smtp.starttls.enable}")
     private String tslEnable;
-
 
     @Bean
     public JavaMailSender getMailSender() {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
 
         mailSender.setHost(host);
-        mailSender.setPort(port);
+        mailSender.setPort(Integer.parseInt(String.valueOf(port)));
         mailSender.setUsername(username);
         mailSender.setPassword(password);
 
         Properties properties = mailSender.getJavaMailProperties();
 
+        properties.setProperty("mail.smtp.starttls.required", tslRequired);
+        properties.setProperty("mail.smtp.starttls.enable", tslEnable);
         properties.setProperty("mail.transport.protocol", protocol);
         properties.setProperty("mail.debug", debug);
-        properties.setProperty("spring.mail.properties.mail.smtp.starttls.enable", tslEnable);
-        properties.setProperty("spring.mail.properties.mail.smtp.starttls.required", tslRequired);
 
         return mailSender;
     }
